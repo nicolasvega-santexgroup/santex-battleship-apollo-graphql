@@ -22,7 +22,14 @@ mutation ($id: ID!, $userId: ID!, $username: String!) {
 }
  `;
 
+ const Shoot = gql`
+mutation ($gameId: ID!, $userId: ID!, $x: Int!, $y: Int!) {
+  shoot  (gameId: $gameId, userId: $userId, x: $x, y: $y)
+}
+ `
+
 export {
   CreateGame,
-  JoinGame
+  JoinGame,
+  Shoot
 };

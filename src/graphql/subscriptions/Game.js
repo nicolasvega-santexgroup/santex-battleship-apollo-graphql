@@ -14,6 +14,16 @@ subscription OnGameCreated {
 }
 `;
 
+const OnShoot = gql`
+subscription OnShoot {
+    newShoot {
+        gameId
+        board
+    }
+}
+`;
+
 export { 
-    OnGameCreated 
+    OnGameCreated,
+    OnShoot
 };

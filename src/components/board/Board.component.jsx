@@ -9,7 +9,7 @@ import Cell from '../cell/Cell.component';
 import './Board.sass';
 
 const Board = (props) => {
-  const { matrix, onClick } = props;
+  const { matrix, myBoard, onClick } = props;
 
   return (
     <div className="board">
@@ -20,6 +20,7 @@ const Board = (props) => {
               <Cell
                 position={{ x: rowIndex, y: columnIndex }}
                 status={matrix[rowIndex][columnIndex]}
+                myBoard={myBoard}
                 onClick={onClick}
               />
             </div>

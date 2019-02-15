@@ -35,9 +35,20 @@ class Cell extends Component {
     const {
       position,
       status,
+      myBoard
     } = this.props;
 
-    const cellClassName = classNames(
+    const cellClassName = myBoard ? 
+    classNames(
+      'cell',
+      {
+        ship: status > cellStatus.WATER,
+        unchecked: status === cellStatus.WATER,
+        miss: status === cellStatus.MISS,
+        hitted: status === cellStatus.HITTED,
+      },
+    ) :
+    classNames(
       'cell',
       {
         unchecked: status >= cellStatus.WATER,
